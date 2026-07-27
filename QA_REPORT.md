@@ -232,3 +232,70 @@ build audit trail dressed as customer copy.
   is to be the destination from a Google Business Profile.
 - The alterations line icon reads as an arrow rather than a needle at 26px.
 - Five photographs across three pages is thin.
+
+---
+
+# Round 4 — hero rebuilt after Alex rejected the landing screen
+
+Alex's words: *"so stretched that not only is it distorted but it ruins the entire home page.
+This is the landing and is the most important section."* He was right, and the round-3 notes had
+already recorded the underlying risk as "open, not actioned" — that was the wrong call.
+
+## What was actually wrong
+
+Measured before the change, at five viewport sizes:
+
+| Viewport | Hero image rendered | Render scale | **H1 top** |
+|---|---|---|---|
+| 1440×800 | 1440×810 from 1700×956 | 0.85× | **933px** |
+| 1728×1000 | 1728×972 | 1.02× | **1095px** |
+| 1920×1080 | 1920×1080 | **1.13×** | **1203px** |
+| 2000×1200 | 2000×1125 | **1.18×** | **1230px** |
+| 2560×1400 | 2560×1440 | **1.51×** | **1563px** |
+
+Two separate faults:
+
+1. **Upscaling.** The source is 1700px wide and the image was full-bleed, so from about 1700px
+   viewport upward it was being enlarged past native — **1.18× at 2000px, which is 2.36× on a
+   Retina display, and 3.02× at 2560**. The aspect ratio was never wrong (1.778 box on a 1.778
+   source), so it was not literally stretched; it was *upscaled*, and that softness is what reads
+   as stretched.
+2. **Nothing but photo above the fold.** The H1 sat at 933–1563px down the page. On a 1200px-tall
+   viewport the headline, the lede and both call buttons were **all below the fold**. The landing
+   screen was a single enlarged photograph.
+
+## What replaced it
+
+The hero is now **inside the 1180px wrapper**, as a two-column layout: copy left, photograph
+right in a framed figure with a red top-rule and the address as a caption. Stacks to one column
+below 900px, copy first.
+
+| Viewport | Hero image rendered | Render scale | H1 top | CTAs finish |
+|---|---|---|---|---|
+| 1440×800 | 549×318 | **0.32×** | **189px** | 598px |
+| 1728×1000 | 549×318 | **0.32×** | **189px** | 598px |
+| 1920×1080 | 549×318 | **0.32×** | **189px** | 598px |
+| 2000×1200 | 549×318 | **0.32×** | **189px** | 598px |
+| 2560×1400 | 549×318 | **0.32×** | **189px** | 598px |
+
+**0.32× native — 0.64× even at DPR 2 — so it is never upscaled at any viewport size**, and the
+headline plus both call buttons are above the fold on an 800px-tall screen. Identical at every
+width, because the wrapper caps the column.
+
+The source was also re-cut: the neighbouring shop's red frame is trimmed off the right edge
+(1700×983 now), and the box uses `aspect-ratio:1700/983` — the source's own ratio — so
+**0% of the frame is discarded** at 390, 768 and 1440.
+
+## Re-verified after the change
+
+| Check | Result |
+|---|---|
+| Contrast (3 pages × 320/390/768/1440) | **0 violations** |
+| Upscale audit (same 12) | **0 violations** |
+| Hero frame discarded | **0%** at every width |
+| Horizontal overflow | **0px** everywhere |
+| Broken images / missing alt | 0 / 0 |
+| Console errors / HTTP ≥400 | 0 / 0 |
+| Reveal stranded after full scroll | 0 of 20 / 15 / 5 |
+| JS disabled — nav overlap with main | **0px** on all three pages |
+| Tap targets under 24px | 0 |

@@ -86,21 +86,50 @@ em{font-style:italic}
 .nav-toggle{display:none;white-space:nowrap;background:transparent;color:var(--indigo);
   border:2px solid var(--indigo);border-radius:8px;min-height:44px;padding:.5rem 1rem;font-weight:700}
 
-/* ---------- hero ---------- */
-.hero{position:relative;padding-bottom:clamp(2rem,1rem + 4vw,4rem);background:var(--paper-2)}
-/* shopfront.jpg is 1700x956 and the fascia — with "Tel:020 8866 0302" on it — sits in the
-   top band of the frame. A 16/8 box anchored at 42% cut the number off entirely. Anchor to
-   the top so the sign always survives, and use a shallower crop. */
-.hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 12%}
-.hero-card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--r);
-  padding:clamp(1.5rem,1rem + 2vw,2.6rem);max-width:44rem;
-  margin-top:clamp(-3.5rem,-2rem - 3vw,-1.5rem);position:relative;z-index:2;
-  box-shadow:0 24px 60px -34px rgba(36,26,94,.5);
-  border-top:4px solid var(--red);
+/* ---------- hero ----------
+   Rebuilt 2026-07-27. The previous version was a full-bleed photograph with an
+   overlapping card. Two things were wrong with it and Alex was right to reject it:
+
+   1. The source is 1700x956. Full-bleed meant it rendered at the viewport width, so
+      at 2000px it was upscaled to 1.18x native — 2.36x on a Retina screen, 3.02x at
+      2560. That softness is what read as "stretched".
+   2. It pushed the H1 to 1230px down a 1200px-tall viewport. The headline and both
+      call buttons were below the fold at every width tested, so the landing screen
+      was a giant soft photo and nothing else.
+
+   The hero is now inside the 1180px wrapper, so the image column tops out around
+   540px — roughly a third of the source's native width, sharp even at DPR 2 — and
+   the headline and CTAs are the first thing on the page. */
+.hero{
+  background:linear-gradient(180deg,var(--paper-2) 0%,var(--paper-2) 78%,#fff 100%);
+  border-bottom:1px solid var(--line);
+  padding:clamp(2.2rem,1.4rem + 4vw,4.6rem) 0;
 }
+.hero-in{
+  display:grid;gap:clamp(1.8rem,1rem + 3vw,3.6rem);
+  grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);align-items:center;
+}
+.hero-copy{max-width:34rem}
 .lede{font-size:clamp(1.04rem,1rem + .5vw,1.24rem);color:var(--ink-3);max-width:34rem}
-.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.5rem 0 0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0 0}
+
+.hero-fig{
+  margin:0;position:relative;max-width:620px;justify-self:end;width:100%;
+  border-top:4px solid var(--red);border-radius:var(--r);
+  background:#fff;padding:.55rem .55rem .25rem;
+  box-shadow:0 26px 60px -34px rgba(36,26,94,.55);
+}
+.hero-fig img{
+  width:100%;aspect-ratio:1700/983;object-fit:cover;
+  border-radius:calc(var(--r) - 6px);
+}
+.hero-fig figcaption{
+  font-size:.83rem;font-weight:600;color:var(--ink-3);
+  padding:.6rem .3rem .35rem;display:flex;align-items:center;gap:.45rem;
+}
+.hero-fig figcaption::before{
+  content:"";width:8px;height:8px;border-radius:50%;background:var(--red);flex:0 0 auto;
+}
 
 /* ---------- strip ---------- */
 .strip{background:var(--indigo);color:#fff}
@@ -232,7 +261,8 @@ em{font-style:italic}
 
 /* ---------- responsive ---------- */
 @media (max-width:900px){
-  .feature-in,.phero-in,.split{grid-template-columns:1fr}
+  .hero-in,.feature-in,.phero-in,.split{grid-template-columns:1fr}
+  .hero-fig{justify-self:stretch;max-width:none}
   .feature-media{order:2}
   .strip-in{grid-template-columns:1fr;gap:.6rem}
 
@@ -256,8 +286,8 @@ em{font-style:italic}
   .site-head{position:sticky;top:0}
   .head-in{position:relative;flex-wrap:wrap}
   .nav .nav-call{margin:.5rem 0 0}
-  .hero-img img{aspect-ratio:16/9;object-position:50% 50%}
-  .hero-card{margin-top:-1.4rem}
+
+
 }
 @media (max-width:420px){
   .brand img{width:142px}

@@ -30,6 +30,7 @@
 | 1 | 6.0 | FAIL — 5 blocking |
 | 2 | 7.2 | FAIL — 3 blocking |
 | 3 | **7.7** | **PASS** — no blocking defects |
+| 4 | — | Hero rebuilt at Alex's direction: full-bleed upscaled image replaced with a contained two-column hero |
 
 Three independent reviewers, one per round, each grading on the build's own merits.
 
@@ -39,7 +40,10 @@ fixed by measurement.
 
 ## Open items, recorded not actioned
 
-1. Desktop hero pushes the H1 below the fold at 1440×800; cap the image height.
+1. ~~Desktop hero pushes the H1 below the fold~~ — **fixed in round 4** after Alex rejected the
+   landing screen. The hero was full-bleed, so it upscaled past native from ~1700px viewport up
+   (1.18× at 2000px, 2.36× at DPR 2) and pushed the H1 to 1230px down a 1200px viewport. Now
+   contained in the 1180px wrapper: 0.32× native at every size, H1 at 189px.
 2. `counter.jpg` shows the unexplained Majestic Junction crest prominently on the services hero.
 3. No `LocalBusiness` JSON-LD and no Open Graph tags — a real miss given the whole point of this
    build is to be the working destination from their Google profile.
