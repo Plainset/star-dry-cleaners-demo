@@ -189,3 +189,46 @@ Five blocking defects, all fixed.
 | JavaScript disabled | nav visible, 4 links, 0 content hidden |
 | Tap targets under 24px | 0 |
 | Third-person agency voice in body copy | **0** |
+
+---
+
+# Round 3 result: 7.7 / 10 — PASS
+
+The independent reviewer reported **no blocking defects**. Independently verified by them: zero
+horizontal overflow across **fifteen** widths (320→1920) on all three pages, 0 console errors,
+0 HTTP ≥400, 0 broken images, 0 missing alt, 0 reveal elements stranded after a full scroll,
+0 contrast violations, one H1 per page with no heading skips, every `tel:` correct, and a focus
+trap that genuinely cycles both directions with Escape restoring focus to the toggle.
+
+On the thing that failed two rounds: **the hero discards 0% of its frame at 320, 390, 768 and
+1440**, so the phone number painted on their own fascia and the "179" both survive at every
+width.
+
+## Fixed after the pass, before closing
+
+The reviewer named two objective errors that "should be fixed before outreach". Both are done —
+these are corrections of known bugs, not an attempt to raise the score:
+
+1. **`alterations.jpg` carried stale intrinsic dimensions** (`width="1200" height="1393"` on a
+   file that is 1300×691). CSS was masking it. Corrected in the markup and in the round-1 table
+   above.
+2. **With JavaScript off, the mobile nav still covered 235px of content.** It kept
+   `position:absolute`, so the no-JS fallback floated over the page instead of stacking in flow.
+   `.nav` now defaults to `position:static` and only becomes absolute under `.js`. Measured with
+   `javaScriptEnabled:false` at 390px: **0px overlap** with `<main>` on all three pages, nav
+   still visible with 4 links, and the JS-on toggle still works.
+
+Two accuracy points were taken at the same time: the Ela J quote now reads "my sons" exactly as
+the reviewer wrote it and as `BUILD_BRIEF.md` records it, and the contact page's provenance
+notes ("Painted on our own fascia", "The number on our Google listing") are gone — they were
+build audit trail dressed as customer copy.
+
+## Left open, recorded not actioned
+
+- The desktop hero image is tall enough to push the H1 below the fold at 1440×800. The sticky
+  header keeps the call button reachable, which is why the reviewer did not block on it.
+- `counter.jpg` on the services hero still shows the Majestic Junction crest prominently.
+- No `LocalBusiness` JSON-LD and no Open Graph tags — a real miss for a site whose whole purpose
+  is to be the destination from a Google Business Profile.
+- The alterations line icon reads as an arrow rather than a needle at 26px.
+- Five photographs across three pages is thin.
