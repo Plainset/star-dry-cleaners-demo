@@ -69,3 +69,63 @@ bite, and `tel:` buttons carry `white-space:nowrap` so a phone number can never 
 - Safari untested this round. No scroll-driven animation, `subgrid` or `@view-transition` is
   used, so the known Safari failure modes do not apply.
 - No form exists, so nothing is submitted and no data is collected.
+
+---
+
+# Round 2 — after independent review scored round 1 at 6.0 (FAIL)
+
+Five blocking defects, all fixed.
+
+1. **Three named Google reviews were published with invented five-star ratings.** The quotes
+   themselves were real and read off their listing, but they were never recorded in
+   `BUILD_BRIEF.md`, and **the per-review star blocks were fabricated** — Google does not expose
+   an individual rating on those entries. The star glyphs are gone; only the 4.6/94 aggregate is
+   claimed; the three quotes are now in the Allowed Facts table with their provenance.
+2. **"Open from half eight, six days a week" was false.** Saturday opens at 09:00. Replaced with
+   the actual pattern.
+3. **The hero crop decapitated the fascia.** `shopfront.jpg` was chosen precisely because the
+   phone number on the sign is legible, and a `16/8` box anchored at `50% 42%` cut that line off
+   entirely — at 390px it clipped the number mid-digit. Re-anchored to `16/9` at `50% 12%`:
+   measured **0% of the frame discarded** at 768 and 1440, 16% at 390. The contact hero had the
+   same fault and is re-anchored too.
+4. **"Forty years of getting it out" was the H1.** "Over 40 years" comes solely from their old
+   site — which this brief itself describes as an unfinished bought template — so it was the
+   weakest-sourced fact on the page carrying the largest type. Also read as a stain-removal
+   promise. Removed entirely; the H1 is now "Cleaned and pressed on Marsh Road."
+5. **Builder's evidence citations were left in customer-facing copy** — "shown on Star's own
+   service panels", "one of the phrases Google pulls out of their reviews". That is audit trail,
+   not service description. Every service line rewritten as a description of the service.
+
+## Improvements taken
+
+- **Voice fixed to first person throughout.** The site was flipping between "we" in the nav and
+  "their/theirs" in the body, so half of it read as an outsider describing the business.
+- **Removed the competitor comparison.** "Your coat goes in a van to a plant somewhere else"
+  disparaged unnamed local dry cleaners — several of whom are on our own lead list — and implied
+  a speed advantage nothing evidences. Also removed the invented causation about why reviews
+  mention turnaround. Both are now on the Do Not Claim list.
+- Softened "not sent away" and "it can be looked at while you are standing there", which were
+  absolute claims on the evidence of one photograph.
+- **`alterations.jpg` re-cropped** to remove the featureless black counter panel that filled its
+  lower third and carried the unexplained Majestic Junction mark. 28% → **11%** discarded.
+- **A focus trap on the open mobile menu.** Tab previously escaped to controls the panel was
+  covering — invisible to a keyboard user. Tab and Shift-Tab now cycle within the panel.
+- **A real typographic identity.** Headings now set in a serif stack (Iowan Old Style / Palatino
+  / Georgia), which bridges to the red serif "STAR" in their own logo instead of leaving the
+  whole site in the default UI sans.
+
+## Round 2 measurements
+
+| Check | Result |
+|---|---|
+| Contrast (3 pages × 320/390/768/1440) | **0 violations** |
+| Upscale | **0 violations** |
+| Horizontal overflow | **0px** at all widths |
+| Frame discarded — hero at 768/1440 | **0%** |
+| Frame discarded — worst case | **16%** (mobile hero) |
+| Broken images / missing alt | 0 / 0 |
+| Console errors / HTTP ≥400 | 0 / 0 |
+| Reveal stranded after full scroll | 0 of 19 / 15 / 5 |
+| JavaScript disabled | nav visible, 4 links, 0 content hidden |
+| Tap targets under 24px | 0 |
+| Invented star ratings | **0** |

@@ -20,11 +20,20 @@
       }
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      if (!nav.classList.contains('is-open')) return;
+      if (e.key === 'Escape') {
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.focus();
+        return;
       }
+      /* Keep Tab inside the open panel — otherwise focus lands on controls the
+         panel is covering, which is invisible to a keyboard user. */
+      if (e.key !== 'Tab') return;
+      var items = [toggle].concat([].slice.call(nav.querySelectorAll('a[href]')));
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
   }
 

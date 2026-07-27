@@ -57,6 +57,21 @@ said Mon–Tue 8:00–18:00 and Wed 9:00–17:00. **None of that content is reus
 | Counter notice: no responsibility for belts, buckles, buttons, zips or pens left in pockets; garments uncollected after three months may be disposed of | their own counter notice |
 | Review themes: turnaround time (17 mentions), perfectly pressed clothes, spotless clothes, reliable dry cleaning | Google review topic tags |
 
+### Google review quotes used verbatim on the site
+
+Added 2026-07-27 after round 1 review correctly pointed out they were published without being
+recorded here. All three were read directly from the business's own Google Business Profile.
+
+| Reviewer | Quote as used |
+|---|---|
+| Ela J (Local Guide) | "Great service, cleaning my sons school blazer from a stress ball goo. It was very hard to clean it but the team did an amazing job! Service with a smile. Thank you" |
+| Areeb M | "Exceptional service! This is by far the best dry cleaners in town. They handle every garment with real care and professionalism. My clothes always come back looking fresh, perfectly cleaned, and well-pressed." |
+| Kaushik Parekh | "Best service I'm really happy I would love to go again nd again thank you for your service" |
+
+**Per-review star ratings are NOT evidenced** and were removed from the site in round 2. Google
+does not expose an individual rating on these entries, so the five-star glyph blocks the build
+originally rendered against each quote were an invention. Only the 4.6/94 aggregate is claimed.
+
 ## Do Not Claim
 
 - **"Drycleaning Quality in Just 2 hrs."** This appears on their window in an older 360°
@@ -74,6 +89,14 @@ said Mon–Tue 8:00–18:00 and Wed 9:00–17:00. **None of that content is reus
   roundel. No company of that name could be verified against this address, so the relationship is
   unknown and is not described.
 - **Same-day service, collection and delivery, staff numbers, eco certification** — none evidenced.
+- **"Over 40 years."** Kept in this table because their own former site said it, but it is the
+  weakest-sourced fact here: that site was an unfinished bought template. Round 1 review was
+  right that promoting it to the largest sentence on the page was not defensible. It is no
+  longer in the H1 and is not used anywhere on the site.
+- **Any comparison with other dry cleaners**, including the "your coat goes in a van to a plant
+  somewhere else" framing used in round 1. It disparages unnamed local competitors — several of
+  whom are separately on our own lead list — and the speed advantage it implies is not evidenced.
+- **Per-review star ratings** — see above.
 - **The neighbouring barber shop.** It appears in one of their listing photographs, with a person
   in frame. Cropped out; not depicted, not referenced.
 

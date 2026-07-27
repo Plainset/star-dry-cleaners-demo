@@ -33,7 +33,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 /* engine.css:255 puts `overflow-wrap:anywhere` on headings, which breaks words
    mid-character on narrow screens. Headings break on words only. */
 h1,h2,h3,h4{overflow-wrap:normal;word-break:normal;text-wrap:balance}
-h1,h2,h3{margin:0 0 .5em;line-height:1.09;letter-spacing:-.021em;font-weight:800}
+h1,h2,h3{margin:0 0 .5em;line-height:1.11;letter-spacing:-.012em;font-weight:700;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif}
+.brand-serif{font-family:"Iowan Old Style",Palatino,Georgia,serif}
 h1{font-size:clamp(2.1rem,1.35rem + 3.2vw,3.7rem)}
 h2{font-size:clamp(1.6rem,1.15rem + 2vw,2.6rem)}
 h3{font-size:clamp(1.08rem,1rem + .42vw,1.26rem)}
@@ -86,7 +88,10 @@ em{font-style:italic}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding-bottom:clamp(2rem,1rem + 4vw,4rem);background:var(--paper-2)}
-.hero-img img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:50% 42%}
+/* shopfront.jpg is 1700x956 and the fascia — with "Tel:020 8866 0302" on it — sits in the
+   top band of the frame. A 16/8 box anchored at 42% cut the number off entirely. Anchor to
+   the top so the sign always survives, and use a shallower crop. */
+.hero-img img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 12%}
 .hero-card{
   background:#fff;border:1px solid var(--line);border-radius:var(--r);
   padding:clamp(1.5rem,1rem + 2vw,2.6rem);max-width:44rem;
@@ -153,7 +158,7 @@ em{font-style:italic}
   grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:center}
 .phero-media img{border-radius:var(--r);width:100%;aspect-ratio:16/10;object-fit:cover}
 /* shopfront-street.jpg is 1400x1265 — nearly square. A 16/10 box threw away 31%. */
-.phero-media--square img{aspect-ratio:5/4}
+.phero-media--square img{aspect-ratio:5/4;object-position:50% 22%}
 
 /* ---------- rows / split ---------- */
 .srows{display:grid;gap:.85rem}
@@ -167,7 +172,7 @@ em{font-style:italic}
 
 .split{display:grid;gap:clamp(1.8rem,1rem + 3vw,3.2rem);
   grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:center}
-.split-media img{border-radius:var(--r);width:100%;aspect-ratio:4/5;object-fit:cover}
+.split-media img{border-radius:var(--r);width:100%;aspect-ratio:5/4;object-fit:cover}
 .ticks{list-style:none;margin:1.2rem 0 1rem;padding:0;display:grid;gap:.5rem;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .ticks li{display:flex;align-items:center;gap:.6rem;font-weight:600}
@@ -249,7 +254,7 @@ em{font-style:italic}
   .site-head{position:relative}
   .head-in{position:relative;flex-wrap:wrap}
   .nav .nav-call{margin:.5rem 0 0}
-  .hero-img img{aspect-ratio:16/11}
+  .hero-img img{aspect-ratio:3/2;object-position:34% 12%}
   .hero-card{margin-top:-1.4rem}
 }
 @media (max-width:420px){
