@@ -20,4 +20,5 @@
 | Round | Score | Notes |
 |---|---|---|
 | 1 | **6.0 — FAIL** | 5 blocking: invented per-review star ratings, a false opening-hours line, a hero crop that cut the phone number off the fascia, the weakest-sourced fact promoted to the H1, and builder evidence-citations left in customer copy |
-| 2 | pending | All 5 fixed, plus voice corrected to first person, competitor comparison removed, alterations image re-cropped, mobile focus trap added, serif headings introduced |
+| 2 | **7.2 — FAIL** | All 5 fixed, plus voice corrected to first person, competitor comparison removed, alterations image re-cropped, mobile focus trap added, serif headings introduced. Round 2 blockers: mobile hero still cut the phone number off the fascia, contact page still in third-person voice, alt text described a sign not in the frame |
+| 3 | pending | Hero box matched to the source ratio (0% discarded at every width) after two failed attempts at tuning object-position; voice fixed; alt corrected; feature image swapped so the machine headline shows the machine; alterations re-cropped; sticky header restored |

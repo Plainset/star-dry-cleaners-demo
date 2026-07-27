@@ -129,3 +129,63 @@ Five blocking defects, all fixed.
 | JavaScript disabled | nav visible, 4 links, 0 content hidden |
 | Tap targets under 24px | 0 |
 | Invented star ratings | **0** |
+
+---
+
+# Round 3 — after independent re-review scored round 2 at 7.2 (FAIL)
+
+## Blocking defects fixed
+
+1. **The mobile hero was still truncating their own phone number** — "Tel:020 886" at 390px,
+   with "179" clipped to "9". This was my second failed attempt at the same crop: rounds 2 and 3
+   both tried to solve it by tuning `object-position`, which cannot work once the box ratio
+   differs from the source. `shopfront.jpg` is 1700×956 (1.78), so the mobile box is now
+   **16/9 — the same ratio as the source**. Measured: **0% of the frame discarded at 390, 768
+   and 1440**. Nothing on the sign is lost at any width.
+2. **The contact page was still in third-person agency voice** in three customer-facing lines
+   ("The number on the shop's own fascia", "As published on their Google listing" ×2), which
+   flatly contradicted round 2's claim that voice was fixed throughout. Now first person.
+   That claim in the round 2 notes was wrong and is corrected here.
+3. **Alt text described a projecting sign that is not in the frame.** `shopfront-street.jpg`
+   shows the fascia, not the projecting sign. Alt rewritten to what is actually visible, and the
+   same error corrected in `BUILD_BRIEF.md`.
+
+## Improvements taken
+
+- **Swapped the home feature image.** The headline is "The machine is in the shop", and
+  `counter.jpg` gave roughly a third of the frame to the gold Majestic Junction crest — a
+  relationship the brief says is unverified and must not be described — while the Union machine
+  itself was small and half-occluded. `workroom.jpg` shows the machine clearly, so it now carries
+  that headline; `counter.jpg` moved to the services hero where it works.
+- **Re-cropped `alterations.jpg` again.** It was ~60% blank slatted wall. Now tight on the bench:
+  the JAPSEW machine, the second machine, the thread cones and the tape measure all read.
+  6% discarded.
+- **Sticky header restored on mobile.** It had been set to `position:relative`, so the call CTA
+  scrolled away on a very tall phone page.
+- **Restored the third review quote verbatim.** Round 2 had silently copyedited "go again nd
+  again" into "again and again". It is a quotation; it is now reproduced exactly, and the brief
+  says so.
+- Softened "a wall of thread" and "bedding of any size", both of which reached past the evidence.
+- `BUILD_BRIEF.md` asset table corrected: `alterations.jpg` is 1300×691, not 1200×1393.
+
+## Round 3 measurements
+
+| Image | Natural | Worst-case frame discarded |
+|---|---|---|
+| `shopfront.jpg` (hero) | 1700×956 | **0%** at 390 / 768 / 1440 |
+| `counter.jpg` | 1600×1218 | **1%** |
+| `workroom.jpg` | 1600×927 | **3%** |
+| `alterations.jpg` | 1300×691 | **6%** |
+| `shopfront-street.jpg` | 1400×1265 | **11%** |
+
+| Check | Result |
+|---|---|
+| Contrast (3 pages × 320/390/768/1440) | **0 violations** |
+| Upscale (same 12 combinations) | **0 violations** |
+| Horizontal overflow | **0px** everywhere |
+| Broken images / missing alt | 0 / 0 |
+| Console errors / HTTP ≥400 | 0 / 0 |
+| Reveal stranded after full scroll | 0 of 19 / 15 / 5 |
+| JavaScript disabled | nav visible, 4 links, 0 content hidden |
+| Tap targets under 24px | 0 |
+| Third-person agency voice in body copy | **0** |

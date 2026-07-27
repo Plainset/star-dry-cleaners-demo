@@ -66,7 +66,7 @@ recorded here. All three were read directly from the business's own Google Busin
 |---|---|
 | Ela J (Local Guide) | "Great service, cleaning my sons school blazer from a stress ball goo. It was very hard to clean it but the team did an amazing job! Service with a smile. Thank you" |
 | Areeb M | "Exceptional service! This is by far the best dry cleaners in town. They handle every garment with real care and professionalism. My clothes always come back looking fresh, perfectly cleaned, and well-pressed." |
-| Kaushik Parekh | "Best service I'm really happy I would love to go again nd again thank you for your service" |
+| Kaushik Parekh | "Best service I'm really happy I would love to go again nd again thank you for your service" — **reproduced exactly, including "nd"; round 2 silently copyedited it and round 3 restored it** |
 
 **Per-review star ratings are NOT evidenced** and were removed from the site in round 2. Google
 does not expose an individual rating on these entries, so the five-star glyph blocks the build
@@ -106,10 +106,10 @@ originally rendered against each quote were an invention. Only the 4.6/94 aggreg
 |---|---|---|---|
 | `logo.png` | 957×260 | Their own logo: red star, red serif STAR, indigo italic Drycleaners | recovered from their own former website via the Internet Archive |
 | `shopfront.jpg` | 1700×956 | The shopfront at 179 Marsh Road, fascia and phone number legible | their own former website — a real photograph of their own shop, not stock |
-| `shopfront-street.jpg` | 1400×1265 | The shopfront today, with the projecting sign and window rails | their Google listing, cropped |
+| `shopfront-street.jpg` | 1400×1265 | The shopfront today: fascia, star, window rails, OPEN sign in the door | their Google listing, cropped twice (neighbouring barber and a person; then a graffitied shutter) |
 | `counter.jpg` | 1600×1218 | The counter, the Union dry-cleaning machine, occasion wear on display | their Google listing |
 | `workroom.jpg` | 1600×927 | Rails of finished garments, sewing machines, the Union machine | their Google listing |
-| `alterations.jpg` | 1200×1393 | The alterations bench: two sewing machines, thread, tape measure | their Google listing |
+| `alterations.jpg` | 1300×691 | The alterations bench: a JAPSEW industrial machine, a second machine, thread cones, tape measure | their Google listing, re-cropped twice — first to remove the Majestic Junction panel, then to remove ~60% blank wall |
 
 **Three images were pulled and rejected.** `hero_2_1.jpg` from their old site is **licensed stock
 photography** — a model in a styled domestic laundry room, not their shop. Two further Google

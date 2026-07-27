@@ -130,7 +130,7 @@ em{font-style:italic}
 .feature{padding:clamp(3rem,2rem + 5vw,5.4rem) 0;background:var(--indigo);color:#fff}
 .feature-in{display:grid;gap:clamp(1.8rem,1rem + 3vw,3.4rem);
   grid-template-columns:minmax(0,1fr) minmax(0,.95fr);align-items:center}
-.feature-media img{border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover}
+.feature-media img{border-radius:var(--r);width:100%;aspect-ratio:16/9;object-fit:cover}
 .feature-copy h2{color:#fff}
 .feature-copy p{color:rgba(255,255,255,.87)}
 .feature-cta{margin-top:1.4rem}
@@ -156,7 +156,7 @@ em{font-style:italic}
 .phero{background:var(--paper-2);padding:clamp(2.5rem,2rem + 4vw,4.4rem) 0;border-bottom:1px solid var(--line)}
 .phero-in{display:grid;gap:clamp(1.6rem,1rem + 3vw,3rem);
   grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:center}
-.phero-media img{border-radius:var(--r);width:100%;aspect-ratio:16/10;object-fit:cover}
+.phero-media img{border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover}
 /* shopfront-street.jpg is 1400x1265 — nearly square. A 16/10 box threw away 31%. */
 .phero-media--square img{aspect-ratio:5/4;object-position:50% 22%}
 
@@ -172,7 +172,7 @@ em{font-style:italic}
 
 .split{display:grid;gap:clamp(1.8rem,1rem + 3vw,3.2rem);
   grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:center}
-.split-media img{border-radius:var(--r);width:100%;aspect-ratio:5/4;object-fit:cover}
+.split-media img{border-radius:var(--r);width:100%;aspect-ratio:16/9;object-fit:cover}
 .ticks{list-style:none;margin:1.2rem 0 1rem;padding:0;display:grid;gap:.5rem;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .ticks li{display:flex;align-items:center;gap:.6rem;font-weight:600}
@@ -251,10 +251,10 @@ em{font-style:italic}
   .nav a[aria-current="page"]{background:var(--paper-2);font-weight:800}
   .nav a[aria-current="page"]::before{content:"";width:4px;align-self:stretch;
     background:var(--red);border-radius:2px;margin-right:.55rem}
-  .site-head{position:relative}
+  .site-head{position:sticky;top:0}
   .head-in{position:relative;flex-wrap:wrap}
   .nav .nav-call{margin:.5rem 0 0}
-  .hero-img img{aspect-ratio:3/2;object-position:34% 12%}
+  .hero-img img{aspect-ratio:16/9;object-position:50% 50%}
   .hero-card{margin-top:-1.4rem}
 }
 @media (max-width:420px){
